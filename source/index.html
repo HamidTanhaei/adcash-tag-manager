@@ -2,8 +2,6 @@
 <html>
 <head>
   <title>tag manager</title>
-  <script src="./knockout.js"></script>
-  <link rel="stylesheet" type="text/css" href="./style.css" >
 </head>
 <body>
 <div class='liveExample'> 
@@ -14,12 +12,13 @@
       <p>Your Tag:</p>
       <ul data-bind="foreach: items">
         <li>
-          <span data-bind="text: $data"> </span>
-          <span data-bind="click: $parent.remove">x</span>
+            <button class="btn btn-primary" type="button">
+                <span data-bind="text: $data"> </span>
+                <span class="glyphicon glyphicon glyphicon-remove" data-bind="click: $parent.remove"></span>
+            </button>
         </li>
       </ul>
   </form>   
 </div>
-<script src="system.js"></script>
 </body>
 </html>
