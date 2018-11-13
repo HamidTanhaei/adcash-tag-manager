@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>tag manager</title>
+</head>
+<body>
+<div class='liveExample'> 
+  <form data-bind="submit: addItem">
+      New Tag: 
+      <textarea data-bind='value: itemToAdd, valueUpdate: "afterkeydown"'></textarea>
+      <button type="submit" data-bind="enable: itemToAdd().length > 0">Add tags</button>
+      <p>Your Tag:</p>
+      <ul data-bind="foreach: items">
+        <li>
+            <button class="btn btn-primary" type="button">
+                <span data-bind="text: $data"> </span>
+                <span class="glyphicon glyphicon glyphicon-remove" data-bind="click: $parent.remove"></span>
+            </button>
+        </li>
+      </ul>
+  </form>   
+</div>
+</body>
+</html>
