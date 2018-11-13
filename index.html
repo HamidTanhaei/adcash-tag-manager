@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>tag manager</title>
+  <script src="./knockout.js"></script>
+  <link rel="stylesheet" type="text/css" href="./style.css" >
+</head>
+<body>
+<div class='liveExample'> 
+  <form data-bind="submit: addItem">
+      New Tag: 
+      <textarea data-bind='value: itemToAdd, valueUpdate: "afterkeydown"'></textarea>
+      <button type="submit" data-bind="enable: itemToAdd().length > 0">Add tags</button>
+      <p>Your Tag:</p>
+      <ul data-bind="foreach: items">
+        <li>
+          <span data-bind="text: $data"> </span>
+          <span data-bind="click: $parent.remove">x</span>
+        </li>
+      </ul>
+  </form>   
+</div>
+<script src="system.js"></script>
+</body>
+</html>
