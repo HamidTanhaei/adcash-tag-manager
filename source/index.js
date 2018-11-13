@@ -1,7 +1,7 @@
 import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 import './style/style.scss';
 import ko from 'knockout';
-11
+
 var SimpleListModel = function(items) {
   let tagsList = [];
 this.items = ko.observableArray(items);
