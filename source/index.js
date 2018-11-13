@@ -1,6 +1,12 @@
-import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
-import './style/style.scss';
+import $ from 'jquery';
+window.jQuery = $;
+const jQuery = $;
 import ko from 'knockout';
+import 'bootstrap-sass/assets/javascripts/bootstrap';
+import 'bootstrap-sass/assets/javascripts/bootstrap/modal';
+import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+import './style/style.scss';
 
 var SimpleListModel = function(items) {
   let tagsList = [];
