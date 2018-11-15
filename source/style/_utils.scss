@@ -1,0 +1,14 @@
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+//global usage classes
+.mb-1{margin-bottom: ceil($padding-base-vertical / 2)}
+.mb-2{margin-bottom: ceil($padding-base-vertical)}
+.mb-3{margin-bottom: ceil($padding-base-vertical + ($padding-base-vertical / 2))}
+.mb-4{margin-bottom: ceil($padding-base-vertical * 2)}
+.mb-5{margin-bottom: ceil(($padding-base-vertical * 2) + ($padding-base-vertical / 2))}
+
+
+.p-1{padding: ceil($padding-base-vertical / 2)}
+.p-2{padding: ceil($padding-base-vertical)}
+.p-3{padding: ceil($padding-base-vertical + ($padding-base-vertical / 2))}
+.p-4{padding: ceil($padding-base-vertical * 2)}
+.p-5{padding: ceil(($padding-base-vertical * 2) + ($padding-base-vertical / 2))}

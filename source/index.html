@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>tag manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Adcash test assignment</title>
 </head>
 <body>
-<div class='liveExample'> 
-  <form data-bind="submit: addItem">
-      New Tag: 
-      <textarea data-bind='value: itemToAdd, valueUpdate: "afterkeydown"'></textarea>
-      <button type="submit" data-bind="enable: itemToAdd().length > 0">Add tags</button>
-      <p>Your Tag:</p>
-      <ul data-bind="foreach: items">
-        <li>
-            <button class="btn btn-primary" type="button">
+<div class="container">
+    <h1>Adcash test assignment</h1>
+    <!-- Add Tag Form -->
+    <form data-bind="submit: addItem">
+        <strong class="mb-3">
+            Type tags here using comma, semicolon and line break as delimiters
+        </strong>
+        <div class="mb-3">
+            <textarea class="form-control" data-bind='value: itemToAdd, valueUpdate: "afterkeydown"'></textarea>
+        </div>
+        <button class="btn btn-primary mb-4" type="submit" data-bind="enable: itemToAdd().length > 0">Add tags</button>
+    </form>
+    <div data-bind="visible:items().length">
+        <!-- Tags List -->
+        <div class="p-5 tags mb-3" data-bind="foreach: items">
+            <button class="label p-2" type="button" data-bind="css: {'btn-primary' : $data > 0, 'btn-danger':$data < 0}">
                 <span data-bind="text: $data"> </span>
-                <span class="glyphicon glyphicon glyphicon-remove" data-bind="click: $parent.remove"></span>
+                <span class="remove glyphicon glyphicon glyphicon-remove" data-bind="click: $parent.remove"></span>
             </button>
-        </li>
-      </ul>
-      <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal">
-          Edit
-      </button>
-  </form>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        </div>
+        <!-- Edit Button -->
+        <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#tagEditor">
+            Edit
+        </button>
+    </div>
+    <!-- Edit Tags Modal -->
+    <div class="modal fade" id="tagEditor" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    <h4 class="modal-title">Edit Tags</h4>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="mb-3">
+                        Edit your tags, separated by comma:
+                    </div>
+                    <div class="input-group mb-1">
+                        <span class="input-group-addon">Tags</span>
+                        <input type="text" class="form-control" placeholder="TagNumber1,TagNumber2,TagNumber3" data-bind='value: tagsList, valueUpdate: "afterkeydown"' />
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" data-bind="click:updateTagsList">Cancel</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-bind="click:editTags">Save changes</button>
                 </div>
             </div>
         </div>
