@@ -1,4 +1,4 @@
-require('webpack');
+const webpack = require('webpack');
 const WebpackBar = require('webpackbar');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const processHTMLPages = require('./processHTMLHelper.js');
@@ -8,6 +8,10 @@ const ProgressBar = new WebpackBar();
 const plugins = [
   ProgressBar,
   extractCSS,
+  new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+  }),
 ].concat(processHTMLPages());
 
 module.exports = {
