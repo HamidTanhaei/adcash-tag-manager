@@ -2,17 +2,15 @@ import ko from "knockout";
 
 export default class TagInput{
     /**
-     * @param {array} items
      * @param {string} storageName
      */
-    constructor(items, storageName){
+    constructor(storageName){
         this.storageName = storageName;
 
         if(localStorage[this.storageName] && JSON.parse(localStorage[this.storageName]).length){
             this.items = ko.observableArray(JSON.parse(localStorage[this.storageName]));
         }else{
-            this.items = ko.observableArray(items);
-            localStorage.setItem(this.storageName, JSON.stringify(items));
+            this.items = ko.observableArray([]);
         }
 
         this.tagsList = ko.observable(this.items().join(','));

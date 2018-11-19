@@ -10,11 +10,13 @@
     <!-- Add Tag Form -->
     <div class="tag-manager">
         <form data-bind="submit: addItem">
-            <strong class="mb-3">
-                Type tags here using comma, semicolon and line break as delimiters
-            </strong>
             <div class="mb-3">
-                <textarea class="form-control" data-bind='value: itemToAdd, valueUpdate: "afterkeydown"'></textarea>
+                <strong>
+                    Type tags here using comma, semicolon and line break as delimiters
+                </strong>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" placeholder="NumericTag1,NumericTag2;NumericTag3" data-bind='value: itemToAdd, valueUpdate: "afterkeydown"'></textarea>
             </div>
             <button class="btn btn-primary mb-4" type="submit" data-bind="enable: itemToAdd().length > 0">Add tags</button>
         </form>
@@ -45,7 +47,7 @@
                         </div>
                         <div class="input-group mb-1">
                             <span class="input-group-addon">Tags</span>
-                            <input type="text" class="form-control" placeholder="TagNumber1,TagNumber2,TagNumber3" data-bind='value: tagsList, valueUpdate: "afterkeydown"' />
+                            <input type="text" class="form-control" placeholder="NumericTag1,NumericTag2,NumericTag3" data-bind='value: tagsList, valueUpdate: "afterkeydown"' />
                         </div>
                     </div>
                     <div class="modal-footer">

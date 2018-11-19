@@ -2,12 +2,14 @@
 
 A simple Knockout component to Add, Edit and Delete tags.
 Enter your numeric tags by just enter your numbers and separate them with comma, semicolon or
-line break. feel free to extend it using ES6 and SASS
-using:
-* [KnockoutJs](https://nodejs.org/)
-* [Bootstrap 3](https://nodejs.org/)
-* [Babel](https://nodejs.org/)
-* [Webpack](https://nodejs.org/)
+line break. feel free to extend it using ES6 and SASS.
+Feel free to refresh your browser without loosing your tags
+Using:
+* [KnockoutJs](https://knockoutjs.com/)
+* [Bootstrap 3](https://getbootstrap.com/)
+* [Babel](https://babeljs.io/)
+* [Webpack](https://webpack.js.org/)
+* [Mocha](https://mochajs.org/)
 
 # Run For Development
 ```sh
@@ -27,7 +29,7 @@ $ npm run build
 ```
 
 # Test
-To use the application standalone, use:
+Run Tests by:
 ```sh
 $ npm test
 ```
