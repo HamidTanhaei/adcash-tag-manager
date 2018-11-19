@@ -7,12 +7,11 @@ import './style/style.scss';
 
 
 // get TagInput Reference
-
-const TagInputRef = new TagInput(["1", "2", "3"], 'TagItems');
-// start TagInput by KO
+const TagInputRef = new TagInput('TagItems');
+// start KO
 ko.applyBindings(TagInputRef);
 
 // reset input data in modal, after close
 $('#tagEditor').on('hidden.bs.modal', function () {
     TagInputRef.updateTagsList()
-})
+});
