@@ -7,7 +7,8 @@
     "start": "webpack-dev-server --mode=development --host 0.0.0.0 --port 9000",
     "prebuild": "rm -rf build",
     "build": "webpack -p",
-    "postbuild": "gulp images --compress"
+    "postbuild": "gulp images --compress",
+    "test": "mocha -r mock-local-storage --compilers js:babel-core/register --recursive"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,8 @@
     "gulp-imagemin": "^4.1.0",
     "html-webpack-plugin": "^3.2.0",
     "knockout": "^3.4.2",
+    "mocha": "^5.2.0",
+    "mock-local-storage": "^1.1.7",
     "node-sass": "^4.9.0",
     "normalize.css": "^8.0.0",
     "postcss-loader": "^2.0.9",
