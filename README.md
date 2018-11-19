@@ -26,4 +26,10 @@ $ npm install
 $ npm run build
 ```
 
+# Test
+To use the application standalone, use:
+```sh
+$ npm test
+```
+
 Webpack boilerplate by: [https://github.com/mdziedzic/build-boilerplate-static-es6-sass](https://github.com/mdziedzic/build-boilerplate-static-es6-sass)
