@@ -21,7 +21,7 @@ Start to develop by navigating to your preferred browser.
 127.0.0.1:9000
 ```
 
-# Run For Development
+# Build
 To use the application standalone, use:
 ```sh
 $ npm install
